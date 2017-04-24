@@ -4,7 +4,6 @@ A Snap.svg plugin that lets you load and animate svgs using a simple schema.
 
 <div class="installation">
 				<h1>Installation</h1>
-				<hr>
 				<h2>Include JS</h2>
 				<p>Include <a href="https://cdnjs.com/libraries/snap.svg/0.4.1">Snap.svg 0.4.1</a> and <code>snap-animation-states.js</code> in the footer. No JQuery needed.</p>
 				<pre>&lt;script type="text/javascript" src="js/snap.svg.js"&gt;<br>&lt;script type="text/javascript" src="js/snap-animation-states.js"&gt;</pre>
@@ -20,7 +19,6 @@ A Snap.svg plugin that lets you load and animate svgs using a simple schema.
 			</div>
 			<div class="schema gutter-bottom-lg">
 				<h1>Schema</h1>
-				<hr>
 				<ul class="gutter">
 					<li><code>selector: string</code> css selector - ex: ".icon-hamburger"</li>
 					<li><code>svg: string</code> svg string or svg file reference</li>
