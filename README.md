@@ -14,9 +14,12 @@ Include [`Snap.svg 0.4.1`](https://cdnjs.com/libraries/snap.svg/0.4.1) and `snap
 
 Your SVGs need a container element. You just need to add whatever class you're calling your svg with to the element that will contain it.
 
-`&lt;i class="icon-hamburger"&gt;&lt;/i&gt;<br>&lt;i class="my-svg-selector"&gt;&lt;/i&gt;`
+`
+<i class="icon-hamburger"></i>
+<i class="my-svg-selector"></i>
+`
 				
-#Call the plugin#
+## Call the plugin
 				
 It's as simple as calling the plugin with the correct schema.
 ```js
