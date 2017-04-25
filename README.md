@@ -29,9 +29,11 @@ It's as simple as calling the plugin with the correct schema.
 	SnapStates({ ...schema... })
 })();
 ```
-#Schema
-	* `selector: string` css selector - ex: ".icon-hamburger"
-	<li><code>svg: string</code> svg string or svg file reference</li>
+# Schema
+
+* `selector: string` css selector - ex: ".icon-hamburger"
+* `svg: string` svg string or svg file reference
+
 	<li><code>easing: string</code> "linear", "easein", "easeout", "easeinout", "backin", "backout", "bounce", "elastic"</li>
 	<li><code>transitionTime: int</code>Transition time is applied to each transform.  A state with 3 transforms one after the other and a transitionTime of 500 ms will take a total of 1500 ms to finish</li>
 	<li><code>initState: string</code>Set initState equal to the state you want to run when the plugin is called.</li>
