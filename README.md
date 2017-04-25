@@ -72,4 +72,5 @@ It's as simple as calling the plugin with the correct schema.
 	- `selector: string` a css selector used to indicate where to watch for the event - ex: an svg inside an anchor tag.  The anchor tag will receive the selector so that when the anchor is clicked the svg animation runs.
 
 
-<iframe height='450' scrolling='no' title='bWwQJZ' src='//codepen.io/bkdiehl/embed/bWwQJZ/?height=435&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
+<p data-height="435" data-theme-id="0" data-slug-hash="bWwQJZ" data-default-tab="js,result" data-user="bkdiehl" data-embed-version="2" data-pen-title="bWwQJZ" class="codepen">See the Pen <a href="http://codepen.io/bkdiehl/pen/bWwQJZ/">bWwQJZ</a> by Briant Diehl (<a href="http://codepen.io/bkdiehl">@bkdiehl</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
