@@ -30,8 +30,8 @@ It's as simple as calling the plugin with the correct schema.
 })();
 ```
 #Schema
-<ul class="gutter">
-	<li><code>selector: string</code> css selector - ex: ".icon-hamburger"</li>
+```
+	* `selector: string` css selector - ex: ".icon-hamburger"
 	<li><code>svg: string</code> svg string or svg file reference</li>
 	<li><code>easing: string</code> "linear", "easein", "easeout", "easeinout", "backin", "backout", "bounce", "elastic"</li>
 	<li><code>transitionTime: int</code>Transition time is applied to each transform.  A state with 3 transforms one after the other and a transitionTime of 500 ms will take a total of 1500 ms to finish</li>
@@ -88,4 +88,4 @@ It's as simple as calling the plugin with the correct schema.
 		</ul>
 		<li><code>selector: string</code> a css selector used to indicate where to watch for the event - ex: an svg inside an anchor tag.  The anchor tag will receive the selector so that when the anchor is clicked the svg animation runs.</li>
 	</ul>
-</ul>
+```
