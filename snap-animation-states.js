@@ -10,6 +10,18 @@ var SnapStates = (function(options) {
 	options.easing 		= options.easing || _defaults.easing;
 
 	_this = document.querySelectorAll(options.selector);
+
+	// add style to head to negate round path ending artifacts in IE, Edge, FireFox
+	var style = document.getElementById('svg-path');
+	if(!style) {
+		var head = document.getElementsByTagName('head')[0];
+		
+		style = document.createElement('style');
+		style.id = "svg-path";
+		style.innerHTML = 'svg path { stroke-linecap: butt; }';
+		head.appendChild(style);
+	}
+	
 	
 	//listens for changes in the dom to see if the plugin should be re-run
 	var observer = new MutationObserver(function(mutations) {
