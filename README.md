@@ -9,7 +9,7 @@ Include [`Snap.svg 0.4.1`](https://cdnjs.com/libraries/snap.svg/0.4.1) and `snap
 
 `
 <script type="text/javascript" src="js/snap.svg.js"></script>   
-<script type="text/javascript" src="js/snap-animation-states.js"></script>
+<script type="text/javascript" src="js/snap-animation-states.js"></script>    
 `
 
 ## Set HTML
@@ -18,7 +18,7 @@ Your SVGs need a container element. You just need to add whatever class you're c
 
 `
 <i class="icon-hamburger"></i>   
-<i class="my-svg-selector"></i>
+<i class="my-svg-selector"></i>    
 `
 				
 ## Call the plugin
