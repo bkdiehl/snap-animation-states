@@ -1,0 +1,22 @@
+{
+  "name": "snap-animation-states",
+  "version": "1.0.1",
+  "description": "A Snap.svg plugin that lets you load and animate svgs using a simple schema.",
+  "main": "snap-animation-states.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkdiehl/snap-animation-states.git"
+  },
+  "author": "Briant Diehl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bkdiehl/snap-animation-states/issues"
+  },
+  "homepage": "https://github.com/bkdiehl/snap-animation-states#readme",
+  "dependencies": {
+    "snapsvg": "0.4.0"
+  }
+}
