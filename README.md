@@ -70,3 +70,6 @@ It's as simple as calling the plugin with the correct schema.
 		* string: string matches name of state you want to run when the event happens
 		* array: used for toggle events. ["state1", "state2"] can be toggled when the event happens
 	- `selector: string` a css selector used to indicate where to watch for the event - ex: an svg inside an anchor tag.  The anchor tag will receive the selector so that when the anchor is clicked the svg animation runs.
+
+
+<iframe height='450' scrolling='no' title='bWwQJZ' src='//codepen.io/bkdiehl/embed/bWwQJZ/?height=435&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
