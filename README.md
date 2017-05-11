@@ -1,6 +1,8 @@
 # snap-animation-states
 A Snap.svg plugin that lets you load and animate svgs using a simple schema.
 
+[View Docs and Demo](https://bkdiehl.github.io/)
+
 # Installation
 
 ## Include JS
