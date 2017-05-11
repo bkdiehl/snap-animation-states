@@ -164,15 +164,19 @@ var animationStateMethods = {
 				var drawPath = transform.setDrawPath(),
 					repeat = transform.setRepeat(cb, el, active, state),
 					transitionTime = transform.setTransitionTime(),
-					snapElem = transform.snapElem;
+					snapElems = transform.snapElem;
+					
+				snapElems.forEach(function(snapElem) {
 					snapElem.stop();
 
-				transform
-					.animateTransform(transitionTime, cb, el, active, state, repeat, snapElem)
-					.animatePath(transform.path, transitionTime, snapElem)
-					.animatePoints(transform.points, transitionTime, snapElem)
-					.animateDrawPath(drawPath, transitionTime, snapElem)
-					.animateAttr(transform.attr, transitionTime, snapElem);
+					transform
+						.animateTransform(transitionTime, cb, el, active, state, repeat, snapElem)
+						.animatePath(transform.path, transitionTime, snapElem)
+						.animatePoints(transform.points, transitionTime, snapElem)
+						.animateDrawPath(drawPath, transitionTime, snapElem)
+						.animateAttr(transform.attr, transitionTime, snapElem);
+				});	
+
 			}, transform.timeout);
 		};
 	},
@@ -193,24 +197,25 @@ var animationStateMethods = {
 			el = schema.elem;
 			
 		//allows for the event to be attached to an ancestor or sibling element specified in the schema
-		if(current.selector) {
-			var ancestorElem = animationStatesHelpers.closest(el, current.selector);
-			if(ancestorElem) el = ancestorElem;
-			else {
-				var siblings = animationStatesHelpers.getSiblings(el);
-				var selector = current.selector.substring(1);
-				for(var j = 0; j < siblings.length; j++) {
-					var elemId = siblings[j].id;
-					var elemClass = siblings[j].className;
+		if(!current.selector) current.selector = schema.selector + "-animate";
 
-					if(elemId.indexOf(selector) != -1 || elemClass.indexOf(selector) != -1) {
-					// if(elemId.includes(selector) || elemClass.includes(selector)) {
-						el = siblings[j];
-						break;
-					}
+		var ancestorElem = animationStatesHelpers.closest(el, current.selector);
+		if(ancestorElem) el = ancestorElem;
+		else {
+			var siblings = animationStatesHelpers.getSiblings(el);
+			var selector = current.selector.substring(1);
+			for(var j = 0; j < siblings.length; j++) {
+				var elemId = siblings[j].id;
+				var elemClass = siblings[j].className;
+
+				if(elemId.indexOf(selector) != -1 || elemClass.indexOf(selector) != -1) {
+				// if(elemId.includes(selector) || elemClass.includes(selector)) {
+					el = siblings[j];
+					break;
 				}
 			}
 		}
+		
 		return el;
 	},
 
@@ -378,7 +383,7 @@ Transform.prototype.setTransformString = function(matrix) {
 
 		//check for additional rotate and scale data
 		if(matrix.r !== undefined && !(matrix.r instanceof Array) || matrix.s !== undefined && !(matrix.s instanceof Array)) {
-			var bbox = this.snapElem.getBBox(1);
+			var bbox = this.snapElem[0].getBBox(1);
 			if(matrix.r !== undefined && !(matrix.r instanceof Array)) matrix.r = [matrix.r, bbox.cx, bbox.cy];
 			if(matrix.s !== undefined && !(matrix.s instanceof Array)) matrix.s = [matrix.s, matrix.s, bbox.cx, bbox.cy];
 		}
@@ -422,11 +427,11 @@ Transform.prototype.setSnapElem = function(el) {
 	//parentElement => element gives unique snap elements
 	if(el.id) snapElem = Snap.select('#' + el.id + ' ' + this.element);			
 	else snapElem = Snap.selectAll('.' + this.selector + ' ' + this.element);	
-
 	if(!snapElem) throw new Error("missing element in transform list: " + this.element);
 
 	if(snapElem.length !== undefined) snapElem = snapElem.items;
-	if(snapElem.length !== undefined) snapElem = snapElem[0];
+	if(snapElem.length === undefined) snapElem = [snapElem];
+	// if(snapElem.length !== undefined) snapElem = snapElem[0];
 	
 	return snapElem;
 };
